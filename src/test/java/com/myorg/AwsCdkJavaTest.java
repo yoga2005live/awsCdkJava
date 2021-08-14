@@ -17,12 +17,12 @@ public class AwsCdkJavaTest {
     @Test
     public void testStack() throws IOException {
         App app = new App();
-        AwsCdkJavaStack stack = new AwsCdkJavaStack(app, "test");
+        AwsCdkJavaPipelineStack stack = new AwsCdkJavaPipelineStack(app, "test");
 
         // synthesize the stack to a CloudFormation template
         JsonNode actual = JSON.valueToTree(app.synth().getStackArtifact(stack.getArtifactId()).getTemplate());
 
         // Update once resources have been added to the stack
-        assertThat(actual.get("Resources")).isNull();
+        assertThat(actual.get("Resources")).isNotNull();
     }
 }

@@ -1,16 +1,13 @@
 package com.myorg;
 
 import software.amazon.awscdk.core.App;
-import software.amazon.awscdk.core.Environment;
 import software.amazon.awscdk.core.StackProps;
-
-import java.util.Arrays;
 
 public class AwsCdkJavaApp {
     public static void main(final String[] args) {
         App app = new App();
 
-        new AwsCdkJavaStack(app, "AwsCdkJavaStack", StackProps.builder()
+        new AwsCdkJavaPipelineStack(app, "AwsCdkJavaStack", StackProps.builder()
                 // If you don't specify 'env', this stack will be environment-agnostic.
                 // Account/Region-dependent features and context lookups will not work,
                 // but a single synthesized template can be deployed anywhere.
